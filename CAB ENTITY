@@ -1,0 +1,49 @@
+1.Entity Class 
+package com.infy.cabs ; 
+public class CabBookingDTO { 
+ private Integer bookingId; 
+ private Long mobileNo; 
+ private String pickUpLocation; 
+ private String dropLocation; 
+ private String cabType; 
+ private String status; 
+ public Integer getBookingId() { 
+ return bookingId; 
+ } 
+ public void setBookingId(Integer 
+bookingId) { 
+ this.bookingId = bookingId; 
+ } 
+ public Long getMobileNo() { 
+ return mobileNo; 
+ } 
+ public void setMobileNo(Long mobileNo) { 
+ this.mobileNo = mobileNo; 
+ } 
+ public String getPickUpLocation() { 
+ return pickUpLocation; 
+ }
+ public void setPickUpLocation(String 
+pickUpLocation) { 
+ this.pickUpLocation = pickUpLocation; 
+ } 
+ public String getDropLocation() { 
+ return dropLocation; 
+ } 
+ public void setDropLocation(String 
+dropLocation) { 
+ this.dropLocation = dropLocation; 
+ } 
+ public String getCabType() { 
+ return cabType; 
+ } 
+ public void setCabType(String cabType) { 
+ this.cabType = cabType; 
+ } 
+ public String getStatus() { 
+ return status; 
+ } 
+ public void setStatus(String status) { 
+ this.status = status; 
+ } 
+}
