@@ -1,0 +1,14 @@
+3.Application 
+package com.infy.cabs; 
+import 
+org.springframework.boot.SpringApplication; 
+import 
+org.springframework.boot.autoconfigure.Sprin
+gBootApplication; 
+@SpringBootApplication 
+public class InfyCabsApplication { 
+ public static void main(String[] args) { 
+ 
+SpringApplication.run(InfyCabsApplication.cl
+ass, args); 
+}}
