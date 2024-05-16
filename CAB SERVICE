@@ -1,0 +1,55 @@
+2.Service Class 
+ package com.infy.cabs; 
+import java.util.List; 
+public interface BookingService { 
+ Integer bookCab(CabBookingDTO 
+cabBookingDTO); 
+ List<CabBookingDTO> getDetails(Long 
+mobileNo); 
+ void cancelBooking(Integer bookingId); 
+} 
+package com.infy.cabs; 
+import 
+org.springframework.stereotype.Service; 
+import java.util.ArrayList; 
+import java.util.HashMap; 
+import java.util.List; 
+import java.util.Map; 
+@Service 
+public class BookingServiceImpl implements 
+BookingService { 
+ private Map<Integer, CabBookingDTO> 
+bookingMap = new HashMap<>(); 
+ private int currentBookingId = 1; 
+ @Override 
+ public Integer bookCab(CabBookingDTO 
+cabBookingDTO) { 
+ 
+cabBookingDTO.setBookingId(currentBookin
+gId); 
+ cabBookingDTO.setStatus("Booked"); 
+ bookingMap.put(currentBookingId, 
+cabBookingDTO); 
+ return currentBookingId++; 
+ } 
+ @Override 
+ public List<CabBookingDTO> 
+getDetails(Long mobileNo) { 
+ List<CabBookingDTO> bookings = new 
+ArrayList<>(); 
+ for (CabBookingDTO booking : 
+bookingMap.values()) { 
+ if 
+(booking.getMobileNo().equals(mobileNo)) { 
+ bookings.add(booking); 
+ } 
+ } 
+ return bookings; 
+ } 
+ @Override 
+ public void cancelBooking(Integer 
+bookingId) { 
+ CabBookingDTO booking = 
+bookingMap.get(bookingId); 
+ if (booking != null) { 
+ booking.setStatus("Cancelled"); }}}
